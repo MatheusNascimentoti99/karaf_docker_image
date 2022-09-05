@@ -19,8 +19,11 @@
 FROM apache/karaf:4.4.1
 
 EXPOSE 8101 1099 44444 8181 9999
-CMD ["karaf", "run"]
 RUN export PATH="$KARAF_HOME/bin/client:$PATH"
+RUN sed -i '/openhab/s/^#//g' $KARAF_HOME/etc/users.properties
+RUN sed -i '/_g_/s/^#//g' $KARAF_HOME/etc/users.properties
+RUN sed -i '/USER/s/^/#/g' $KARAF_HOME/etc/users.properties
+
 COPY init.sh /init.sh
 COPY karaf.conf /karaf.conf
 COPY dependencies /dependencies
