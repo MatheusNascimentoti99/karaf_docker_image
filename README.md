@@ -4,8 +4,13 @@
 cd karaf && docker build -t karaf . 
 ```
 
+### Create and run docker image
 
-RUN Docker Compose
+```
+docker run -i -t -p 1883:1883 -p 8181:8181 -p 1099:1099 -p 8101:8101 -p 61616:61616 -p 44444:44444 karaf
+```
+
+### Create docker image from docker compose
 
 ```
 docker compose up
@@ -18,8 +23,3 @@ docker compose exec -ti karaf /bin/bash
 ```
 
 
-RUN Docker
-
-```
-docker run -i -t -p 1883:1883 -p 8181:8181 -p 1099:1099 -p 8101:8101 -p 61616:61616 -p 44444:44444 karaf
-```
