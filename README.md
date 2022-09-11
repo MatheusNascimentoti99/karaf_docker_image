@@ -21,5 +21,5 @@ docker compose exec -ti karaf /bin/bash
 RUN Docker
 
 ```
-docker run -i -t -p 1883:1883 -p 8181:8181 -p 1099:1099 -p 8101:8101 -p 61616:61616 -p 44444:44444
+docker run -i -t -p 1883:1883 -p 8181:8181 -p 1099:1099 -p 8101:8101 -p 61616:61616 -p 44444:44444 karaf
 ```
