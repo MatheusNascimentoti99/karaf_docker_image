@@ -24,8 +24,13 @@ RUN sed -i '/_g_/s/^#//g' $KARAF_HOME/etc/users.properties
 RUN sed -i '/USER/s/^/#/g' $KARAF_HOME/etc/users.properties
 
 COPY init.sh /init.sh
+COPY br.ufba.dcc.wiser.soft_iot.local_storage.cfg $KARAF_HOME/etc/br.ufba.dcc.wiser.soft_iot.local_storage.cfg
+COPY br.ufba.dcc.wiser.soft_iot.gateway.mapping_devices.cfg $KARAF_HOME/etc/br.ufba.dcc.wiser.soft_iot.gateway.mapping_devices.cfg
+COPY org.ops4j.datasource-gateway.cfg $KARAF_HOME/etc/org.ops4j.datasource-gateway.cfg
+
 COPY karaf.conf /karaf.conf
 RUN chmod +x ./init.sh
+
 CMD ./init.sh
 
-EXPOSE 8101 1099 44444 8181 9999
+EXPOSE 8101 1099 44444 8181 9999 1883
