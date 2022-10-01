@@ -23,3 +23,10 @@ docker compose exec -ti karaf /bin/bash
 ```
 
 
+To simulate devices
+
+```
+docker compose exec -ti karaf /bin/bash
+cd /opt/simulated-devices
+java -jar simDevices.jar config.properties
+```
