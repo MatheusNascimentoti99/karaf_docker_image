@@ -9,10 +9,7 @@ cd karaf && docker build -t karaf .
 ```
 docker run -i -t -p 1883:1883 -p 8181:8181 -p 1099:1099 -p 8101:8101 -p 61616:61616 -p 44444:44444 karaf
 ```
-To init bundlers and dependencies you need to run the following command inside of the container
-```
-./init.sh
-```
+It will take a time to complete the installation
 
 ## Create docker image from docker compose
 
