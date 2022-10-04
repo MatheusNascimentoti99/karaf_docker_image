@@ -4,13 +4,17 @@
 cd karaf && docker build -t karaf . 
 ```
 
-### Create and run docker image
+## Create and run docker image
 
 ```
 docker run -i -t -p 1883:1883 -p 8181:8181 -p 1099:1099 -p 8101:8101 -p 61616:61616 -p 44444:44444 karaf
 ```
+To init bundlers and dependencies you need to run the following command inside of the container
+```
+./init.sh
+```
 
-### Create docker image from docker compose
+## Create docker image from docker compose
 
 ```
 docker compose up
@@ -22,11 +26,3 @@ To run in interactive mode you need to run the following command
 docker compose exec -ti karaf /bin/bash
 ```
 
-
-To simulate devices
-
-```
-docker compose exec -ti karaf /bin/bash
-cd /opt/simulated-devices
-java -jar simDevices.jar config.properties
-```
