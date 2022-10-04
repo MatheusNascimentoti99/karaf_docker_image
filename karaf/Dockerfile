@@ -30,6 +30,6 @@ COPY org.ops4j.datasource-gateway.cfg $KARAF_HOME/etc/org.ops4j.datasource-gatew
 COPY karaf.conf /karaf.conf
 RUN chmod +x ./init.sh
 
-# CMD ./init.sh
+CMD ./init.sh
 RUN apt-get update && apt-get install nano -y
 EXPOSE 8101 1099 44444 8181 9999 1883 5432 80 8080 61616
